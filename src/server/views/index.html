@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+
+    {% for eachRest in restaurantList %}
+    <div class="col-xs-4 restBox">
+      <a href="/restaurants/{{ eachRest.id }}" type="button">
+        <p>{{ eachRest.name }}</p>
+        <img src="./images/{{ eachRest.image }}" class="image">
+        <p>{{ eachRest.cuisine }} Cuisine</p>
+        <p>{{ eachRest.city }}, {{ eachRest.state }}</p>
+      </a>
+      <p>Rating: {{ eachRest.rating }}/5</p>
+    </div>
+    {% endfor %}
+
+  </div>
+
+{% endblock %}
